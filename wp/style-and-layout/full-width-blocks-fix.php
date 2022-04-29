@@ -1,7 +1,13 @@
 <?php
 /**
  * Adds a CSS variable ---the-scrollbar-width to prevent hirizontal scroll from appearing when blocks are fullwidth
+
+#js
+#gutenberg
+#css
+
  */
+
 
 // security
 if ( ! defined( 'ABSPATH' ) ) {
