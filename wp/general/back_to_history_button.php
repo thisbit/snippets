@@ -27,5 +27,4 @@ if ( ! empty( $referer ) ) {
 			}
 	</script>
 	<?php echo '<a onclick="backClick()" title="Return to the previous page" onMouseOver="this.style.cursor=\'pointer\'" >Go back</a>'; 
-
 }
