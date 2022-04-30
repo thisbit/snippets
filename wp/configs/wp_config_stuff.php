@@ -11,8 +11,8 @@ define('DISALLOW_FILE_MODS', true); // no file editing even via updates
 
 
 /** hardcode urls so it cannot be messed up by clients */
-define('WP_HOME','https://kulturforum-zagreb.org');
-define('WP_SITEURL','https://kulturforum-zagreb.org');
+define('WP_HOME','https://domain.com');
+define('WP_SITEURL','https://domain.com');
 
 /** Debuging constants, off on production, on when problems */
 define( 'WP_DEBUG', false );
