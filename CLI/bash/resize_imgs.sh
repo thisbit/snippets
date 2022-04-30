@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# Add as symlink to use from anywhere: sudo ln -s /path/to/where/the/script/is/located symlinkname
+
 echo "WARNING: run this in the folder that contains images"
 
 read -p "# IMAGE FILETYPE (type number):
