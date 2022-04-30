@@ -13,7 +13,7 @@
 get_header();
 
 $args = array(
-	'post_type' => array ( 'people', 'post' ),
+	'post_type' => array ( 'people', 'post' ), // put here any post types you might want to show on page
 );
  
 $query = new WP_query ( $args );
@@ -34,12 +34,18 @@ if ( $query->have_posts() ) {
 		if ( get_post_type() === 'people' && $count < 4 ) {
 			$count +=1;
 			?>
-					<article class="entry">
-						<?php do_action( 'thisbit_homepage_people_loop' ); // Prepare post templates with GP block hook ?>
-					</article>
-				<?php
-				}
-				
+			<article class="entry">
+				<?php if ( $theme->template !== 'generatepress' && $theme->name     !== 'generatepress' ) : // if generatepress make the templates with elements
+					do_action( 'thisbit_homepage_people_loop' ); // Prepare post templates with GP block hook
+					else :  // if not use the generic wp stuff to show posts, should use template parts but ... hey ?>
+					<header>
+						<div class="post-thumbnail"><?php the_post_thumbnail( 'medium' ) ?></div>
+						<h3><a href="<?php the_permalink(); ?>" ><?php the_title(); // Prepare post templates with GP block hook ?></a></h3>
+					</header>
+				<?php endif; ?>
+			</article>
+			<?php 
+			}
 		endwhile; // end first loop for people cpts
 		rewind_posts();
 		?>
@@ -51,22 +57,27 @@ if ( $query->have_posts() ) {
 			endif;
   ?>
 	<section class="blog-posts grid">
-	<?php
-			
-			$count = 0;
-			while ( $query->have_posts() ) : $query->the_post();
-			// start second loop for posts
-				if ( get_post_type() === 'post' && $count < 4 ) {
-					$count +=1;
-					?>
-					<article class="entry">
-						<?php do_action( 'thisbit_homepage_posts_loop' ); // Prepare post templates with GP block hook ?>
-					</article>
-				<?php
-				}
-
-			endwhile; // end second loop for posts
-			rewind_posts();
+	<?php 
+		$count = 0;
+		while ( $query->have_posts() ) : $query->the_post();
+		// start second loop for posts
+		if ( get_post_type() === 'post' && $count < 4 ) {
+			$count +=1;
+			?>
+			<article class="entry">
+				<?php if ( $theme->template !== 'generatepress' && $theme->name     !== 'generatepress' ) : // if generatepress make the templates with elements
+					do_action( 'thisbit_homepage_post_loop' ); // Prepare post templates with GP block hook
+					else :  // if not use the generic wp stuff to show posts, should use template parts but ... hey ?>
+					<header>
+						<div class="post-thumbnail"><?php the_post_thumbnail( 'medium' ) ?></div>
+						<h3><a href="<?php the_permalink(); ?>" ><?php the_title(); // Prepare post templates with GP block hook ?></a></h3>
+					</header>
+				<?php endif; ?>
+			</article>
+			<?php 
+			}
+		endwhile; // end first loop for people cpts
+		rewind_posts();
 		?>
 	</section>
 
