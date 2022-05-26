@@ -1,5 +1,8 @@
-# Block User ID Phishing Requests
+# Redirect all requests to authors formated as querystrings exmp "domain.com/?author=1"
 <IfModule mod_rewrite.c>
-	RewriteCond %{QUERY_STRING} ^author=([0-9]*)
+	RewriteCond %{QUERY_STRING} ^author=([0-9]*) [NC]
 	RewriteRule .* http://example.com/? [L,R=302]
 </IfModule>
+
+# Redirect all requests to authors formated as permalinks exmp "domain.com/author/username"  
+RedirectMatch 301 "/author/(.*)$" "http://www.example.com"
