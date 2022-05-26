@@ -1,7 +1,8 @@
 <?php
 /**
- * Allow rest requests only for logged in users
+ * Allow rest requests only for logged in users, for example http://domain.com/wp-json/wp/v2/users
  * Prevents user enumeration, for security resons
+ * Combine with http://domain.com/?author=1 using htaccess (check my htaccess folder in this repo)
  * @link https://developer.wordpress.org/rest-api/frequently-asked-questions/#require-authentication-for-all-requests
  */
 add_filter( 'rest_authentication_errors', function( $result ) {

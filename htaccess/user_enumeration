@@ -1,0 +1,5 @@
+# Block User ID Phishing Requests
+<IfModule mod_rewrite.c>
+	RewriteCond %{QUERY_STRING} ^author=([0-9]*)
+	RewriteRule .* http://example.com/? [L,R=302]
+</IfModule>
