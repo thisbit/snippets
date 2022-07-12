@@ -9,3 +9,5 @@ function thisbit_add_taxonomies_to_pages() {
  register_taxonomy_for_object_type( 'category', 'page' );
 }
 add_action( 'init', 'thisbit_add_taxonomies_to_pages' );
+
+
