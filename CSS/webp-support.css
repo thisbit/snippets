@@ -1,0 +1,20 @@
+/* Old Browsers Use this - read Safari */
+element.classname {
+  background: url("../images/image.jpg");
+}
+
+/* Chrome 66+, Edge 79+, Opera 53+, Android Brower 80+ */
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution:.001dpcm) {
+  @supports (background-image: -webkit-image-set(url("../images/repozitorij.webp") 1x)) {
+    element.classname {
+	    background: url("../images/image.jpg");
+	  }
+  }
+}
+
+/* FF 66+ */
+@supports (flex-basis: max-content) and (-moz-appearance: meterbar) {
+ element.classname {
+    background: url("../images/image.jpg");
+  }
+}
