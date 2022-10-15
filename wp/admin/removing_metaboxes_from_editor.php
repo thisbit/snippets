@@ -7,6 +7,8 @@ function remove_meta_boxes() {
   remove_meta_box('trackbacksdiv','post','normal');
   remove_meta_box('commentstatusdiv','post','normal');
   remove_meta_box('commentsdiv','post','normal');
+  remove_meta_box('formatdiv','post','normal');
+
   # Removes meta from pages #
   remove_meta_box('postexcerpt','page','normal'); // optionally use this if page excerpts are enabled
   remove_meta_box('postcustom','page','normal');
