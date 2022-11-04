@@ -9,5 +9,5 @@
 	- get Builderius Layouts in [layouts](layouts) folder.
 
 Use all with your own responsibility. I am sharing this with best intentions, but bear no responisbilities if any issues occur.
-Find the video guide here [My Youtube Channel, Builderius Playlist](https://youtu.be/lmhnskJAPtw)
+Find the video guide here [At my Youtube Channel](https://youtu.be/lmhnskJAPtw)
 Otherwise, wee you in [builderius community](https://www.facebook.com/groups/builderians).
