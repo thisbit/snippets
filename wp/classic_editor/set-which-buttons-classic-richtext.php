@@ -31,3 +31,5 @@ function apuri_tinymce_editor_buttons_second_row(  ) {
 }
 add_filter("mce_buttons", "apuri_tinymce_editor_buttons", 99); //targets the first line
 add_filter("mce_buttons_2", "apuri_tinymce_editor_buttons_second_row", 99); //targets the second line
+
+
