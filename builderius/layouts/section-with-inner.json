@@ -2,6 +2,7 @@
 * A layout element for Builderius Builder
 * Layout consists of outer full width section element with inned centered max witdh 1440px div element
 * this is a flexbox based layout, without styling serving you as a wireframe for your design
+* DELETE ALL COMMENTS FROM FILE BEFORE USING IN BUILDERIUS
 */
 
 {
