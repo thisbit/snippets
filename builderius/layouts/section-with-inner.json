@@ -1,0 +1,179 @@
+/*
+* A layout element for Builderius Builder
+* Layout consists of outer full width section element with inned centered max witdh 1440px div element
+* this is a flexbox based layout, without styling serving you as a wireframe for your design
+*/
+
+{
+   "modules":{
+      "u5b02e8":{
+         "id":"u5b02e8",
+         "name":"GenericBlock",
+         "label":"Main Content Wrapper",
+         "settings":[
+            {
+               "name":"maxWidth",
+               "value":{
+                  "all":{
+                     ".section-with-inner > .inner-container":{
+                        "b1":"px",
+                        "a1":1440
+                     }
+                  }
+               }
+            },
+            {
+               "name":"width",
+               "value":{
+                  "all":{
+                     ".section-with-inner > .inner-container":{
+                        "b1":"%",
+                        "a1":100
+                     }
+                  }
+               }
+            },
+            {
+               "name":"padding",
+               "value":{
+                  "all":{
+                     ".section-with-inner > .inner-container":{
+                        "a4":50,
+                        "a3":50,
+                        "b4":"px",
+                        "a2":50,
+                        "b3":"px",
+                        "a1":50,
+                        "b2":"px",
+                        "b1":"px"
+                     }
+                  }
+               }
+            },
+            {
+               "name":"alignItems",
+               "value":{
+                  "all":{
+                     ".section-with-inner > .inner-container":{
+                        "a1":"center"
+                     },
+                     ".section-with-inner":{
+                        "a1":"center"
+                     }
+                  }
+               }
+            },
+            {
+               "name":"justifyContent",
+               "value":{
+                  "all":{
+                     ".section-with-inner > .inner-container":{
+                        "a1":"center"
+                     },
+                     ".section-with-inner":{
+                        "a1":"center"
+                     }
+                  }
+               }
+            },
+            {
+               "name":"flexWrap",
+               "value":{
+                  "all":{
+                     ".section-with-inner > .inner-container":{
+                        "a1":"nowrap"
+                     },
+                     ".section-with-inner":{
+                        "a1":"nowrap"
+                     }
+                  }
+               }
+            },
+            {
+               "name":"flexDirection",
+               "value":{
+                  "all":{
+                     ".section-with-inner > .inner-container":{
+                        "a1":"row"
+                     },
+                     ".section-with-inner":{
+                        "a1":"row"
+                     }
+                  }
+               }
+            },
+            {
+               "name":"display",
+               "value":{
+                  "all":{
+                     ".section-with-inner > .inner-container":{
+                        "a1":"flex"
+                     },
+                     ".section-with-inner":{
+                        "a1":"flex"
+                     }
+                  }
+               }
+            },
+            {
+               "name":"tagClass",
+               "value":{
+                  "a1":[
+                     "section-with-inner"
+                  ]
+               }
+            },
+            {
+               "name":"htmlTagContainer",
+               "value":{
+                  "a1":"main"
+               }
+            },
+            {
+               "name":"isLinkWrapper",
+               "value":{
+                  "a1":false
+               }
+            }
+         ],
+         "parent":""
+      },
+      "ue03916":{
+         "id":"ue03916",
+         "name":"GenericBlock",
+         "label":"inner container",
+         "settings":[
+            {
+               "name":"tagClass",
+               "value":{
+                  "a1":[
+                     "inner-container"
+                  ]
+               }
+            },
+            {
+               "name":"htmlTagContainer",
+               "value":{
+                  "a1":"div"
+               }
+            },
+            {
+               "name":"isLinkWrapper",
+               "value":{
+                  "a1":false
+               }
+            }
+         ],
+         "parent":"u5b02e8",
+         "index":0
+      }
+   },
+   "indexes":{
+      "root":[
+         "u5b02e8"
+      ],
+      "u5b02e8":[
+         "ue03916"
+      ]
+   }
+}
