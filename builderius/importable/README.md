@@ -1,3 +1,3 @@
 # This folder contains ready made files you can [import into builderius site](https://docs.builderius.io/docs/vcs/version-control-system)
-### warning, these import files can override your website in total, or in part, so before you import any of these please [create a release](https://docs.builderius.io/docs/publish/release) so you can restore to it in case anything happens.
-### another warning, I use Builderius Pro, so I have no idea what works for the free version and what not.
+- warning, these import files can override your website in total, or in part, so before you import any of these please [create a release](https://docs.builderius.io/docs/publish/release) so you can restore to it in case anything happens.
+- another warning, I use Builderius Pro, so I have no idea what works for the free version and what not.
