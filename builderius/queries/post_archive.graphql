@@ -1,0 +1,40 @@
+# generated data for typical blog/post archive, can/should be placed in a template data variables
+
+query{
+  queried_posts{
+    count
+    page
+    pages
+    nodes{
+      ID
+      permalink
+      title: post_title
+      content: post_content
+      excerpt:post_excerpt
+      status: post_status
+      date: post_date
+      type: post_type
+      author: post_author{
+        display_name
+        first_name
+        last_name
+        user_email
+        avatar_url
+        roles
+      }
+      categories{
+        name
+      }
+      tags{
+        name
+      }
+      featured_image{
+        title
+        alt_text
+        caption
+        file_url
+      }
+    }
+    pagination
+  }
+}
