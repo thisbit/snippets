@@ -1,0 +1,16 @@
+# generates dynamic wordpress navigation data, should placed in global data variables
+query{
+  nav_menu(identifier: "name", value:"Main Menu") {
+    items{
+      ID
+      url
+      title
+      object_id
+      children{
+        ID
+        url
+        title 
+      }
+    }
+  }
+}
