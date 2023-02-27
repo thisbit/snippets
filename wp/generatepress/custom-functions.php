@@ -1,5 +1,4 @@
 <?php 
-// Taylor Drayson wrote this
 /*
  * @function Automatically call custom functions in Generateblocks Dynamic Data
  * @author Taylor Drayson
