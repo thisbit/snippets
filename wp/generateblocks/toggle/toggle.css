@@ -1,0 +1,53 @@
+.editor-styles-wrapper .gb-button-wrapper .gb-button.trigger,
+.site .gb-button-wrapper .gb-button.trigger {
+  cursor: pointer;
+  user-select: none;
+  padding: 5px !important;
+  border-radius: 2em;
+  height: 25px;
+  width: 50px;
+  align-items: center;
+  color: #ddd;
+  background: #aaa;
+}
+.editor-styles-wrapper .gb-button-wrapper .gb-button.trigger .gb-icon,
+.site .gb-button-wrapper .gb-button.trigger .gb-icon {
+    margin-left: 25px;
+    margin-right: 0;
+    transition: linear .15s all;
+}
+
+.editor-styles-wrapper .gb-button-wrapper .gb-button.trigger.toggled .gb-icon,
+.site .gb-button-wrapper .gb-button.trigger.toggled .gb-icon {
+    margin-right: 25px;
+    margin-left: 0;
+}
+
+.site .gb-button-wrapper .gb-button.trigger:hover,
+.site .gb-button-wrapper .gb-button.trigger:focus {
+  color: #8ed1fc;
+  background: var(--accent);
+}
+
+.site .containers {
+  overflow: hidden;
+}
+
+.site .containers > .gb-inside-container > .gb-container {
+  transform: scale(0); 
+  height: 0;
+  margin-bottom: 0;
+  transition:  all ease .25s;
+  overflow: hidden;
+}
+
+.site .containers > .gb-inside-container > .gb-container a {
+  display: none;
+}
+.site .containers > .gb-inside-container > .gb-container.is-active a {
+  display: unset;
+}
+
+.site .containers > .gb-inside-container > .gb-container.is-active {
+  transform: scale(1);
+}
