@@ -1,0 +1,10 @@
+.gb-accordion .gb-button {
+    position: sticky;
+    top: 100px;
+    z-index: 5;
+    background-color: var(--base);
+}
+
+.admin-bar .gb-accordion .gb-button {
+    top: 132px;
+}
