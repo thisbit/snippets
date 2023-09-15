@@ -6,7 +6,7 @@ query{
       url
       title
       object_id
-      children{
+      children @recursive {
         ID
         url
         title 

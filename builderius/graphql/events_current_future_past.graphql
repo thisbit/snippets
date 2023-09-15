@@ -1,0 +1,161 @@
+query {
+  today: php_function_output(function: "date", arguments: ["Y-m-d"])
+  future: posts (
+    query: {
+      post_type: "izlozba",
+      order: "ASC",
+      orderby: "exb_date_start",
+      meta_query: {
+        relation: "AND",
+        array: [
+          {
+            key: "exb_date_start",
+            compare: "EXISTS",
+          },
+          {
+            key: "exb_date_start",
+            value: "{{{today}}}",
+            type: "DATE",
+            compare: ">",
+          }
+        ]
+      },
+    }
+  ) {
+    exhibitions: nodes {
+      ID
+      title: post_title
+      link: permalink
+      # exhibition duration dates
+      raw_starts: acf_value(name: "exb_date_start") @private
+      raw_ends: acf_value(name: "exb_date_end") @private
+      
+      starts: php_function_output(function: "date_i18n", arguments: ["[[[dateFormaterStart]]]", "{{{strtotime(raw_starts)}}}"])
+      ends: php_function_output(function: "date_i18n", arguments: ["[[[dateFormaterEnd]]]", "{{{strtotime(raw_ends)}}}"])
+      artists: acf_value(name: "artists_in_exb")
+      img_l: featured_image(size: LARGE) {
+        alt: alt_text
+        url: file_url
+        caption
+      }
+      img_m: featured_image(size: MEDIUM_LARGE) {
+        alt: alt_text
+        url: file_url
+        caption
+      }
+      img_s: featured_image(size: MEDIUM) {
+        alt: alt_text
+        url: file_url
+        caption
+      }
+    }
+  }
+  current: posts (
+    query: {
+      post_type: "izlozba",
+      order: "ASC",
+      orderby: "exb_date_start",
+      meta_query: {
+        relation: "AND",
+        array: [
+          {
+            key: "exb_date_start",
+            compare: "EXISTS",
+          },
+          {
+            key: "exb_date_start",
+            value: "{{{today}}}",
+            type: "DATE",
+            compare: "<=",
+          },
+          {
+            key: "exb_date_end",
+            value: "{{{today}}}",
+            type: "DATE",
+            compare: ">=",
+          }
+        ]
+      },
+    }
+  ) {
+    exhibitions: nodes {
+      ID
+      title: post_title
+      link: permalink
+      # exhibition duration dates
+      raw_starts: acf_value(name: "exb_date_start") @private
+      raw_ends: acf_value(name: "exb_date_end") @private
+      
+      starts: php_function_output(function: "date_i18n", arguments: ["[[[dateFormaterStart]]]", "{{{strtotime(raw_starts)}}}"])
+      ends: php_function_output(function: "date_i18n", arguments: ["[[[dateFormaterEnd]]]", "{{{strtotime(raw_ends)}}}"])
+      artists: acf_value(name: "artists_in_exb")
+      img_l: featured_image(size: LARGE) {
+        alt: alt_text
+        url: file_url
+        caption
+      }
+      img_m: featured_image(size: MEDIUM_LARGE) {
+        alt: alt_text
+        url: file_url
+        caption
+      }
+      img_s: featured_image(size: MEDIUM) {
+        alt: alt_text
+        url: file_url
+        caption
+      }
+    }
+  }
+  past: posts (
+    query: {
+      post_type: "izlozba",
+      order: "ASC",
+      orderby: "exb_date_start",
+      meta_query: {
+        relation: "AND",
+        array: [
+          {
+            key: "exb_date_start",
+            compare: "<",
+            value: "{{{today}}}",
+            type: "DATE",
+          },
+          {
+            key: "exb_date_end",
+            compare: "<",
+            value: "{{{today}}}",
+            type: "DATE",
+          }
+        ]
+      },
+    }
+  ) {
+    exhibitions: nodes {
+      ID
+      title: post_title
+      link: permalink
+      # exhibition duration dates
+      raw_starts: acf_value(name: "exb_date_start") @private
+      raw_ends: acf_value(name: "exb_date_end") @private
+      
+      starts: php_function_output(function: "date_i18n", arguments: ["[[[dateFormaterStart]]]", "{{{strtotime(raw_starts)}}}"])
+      ends: php_function_output(function: "date_i18n", arguments: ["[[[dateFormaterEnd]]]", "{{{strtotime(raw_ends)}}}"])
+      artists: acf_value(name: "artists_in_exb")
+      img_l: featured_image(size: LARGE) {
+        alt: alt_text
+        url: file_url
+        caption
+      }
+      img_m: featured_image(size: MEDIUM_LARGE) {
+        alt: alt_text
+        url: file_url
+        caption
+      }
+      img_s: featured_image(size: MEDIUM) {
+        alt: alt_text
+        url: file_url
+        caption
+      }
+    }
+  }
+}

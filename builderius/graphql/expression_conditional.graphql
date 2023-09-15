@@ -1,0 +1,3 @@
+{
+	 condition : expression_result(expression: "{{some == comparison ? 'outputif' : 'outputifnot' }}")
+}
