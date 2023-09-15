@@ -1,0 +1,4 @@
+{
+	archive_raw: php_function_output(function: "get_queried_object") @private
+	archive_label: expression_result(expression: "{{{archive_raw.labels.name}}}")
+}
