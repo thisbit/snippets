@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * This snippet renders a reading time for the current post
  * @source https://goldpenguin.org/blog/calculate-wordpress-reading-time-without-a-plugin/ 
@@ -7,14 +7,15 @@
 
 // Add Shortcode
 function gp_reading_time() {
+    global $post;
   $article = get_post_field( 'post_content', $post->ID ); //gets full text from article
     $wordcount = str_word_count( strip_tags( $article ) ); //removes html tags
     $time = ceil($wordcount / 250); //takes rounded of words divided by 250 words per minute
   
     if ($time == 1) { //grammar conversion
-      $label = " min";
+      $label = "min";
     } else {
-      $label = " min";
+      $label = "min";
     }
   
     $totalString = $time . $label; //adds time with minute/minutes label
