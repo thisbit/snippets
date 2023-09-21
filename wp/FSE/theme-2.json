@@ -1,0 +1,36 @@
+{
+	"version": 2,
+	"settings": {
+		"typography": {
+			"letterSpacing": false,
+			"Appearance": false,
+			"letterCase": false,
+			"fontFamily": false,
+			"fontSize": false,
+			"fontStyle": false,
+			"fontWeight": false,
+			"lineHeight": false,
+			"textDecoration": false,
+			"textTransform": false,
+			"dropCap": false,
+			"customFontSize": false,
+			"customLineHeight": false
+		},
+		"color": {
+			"defaultPalette": false,
+			"custom": false,
+			"background": false,
+			"gradient": false,
+			"text": false
+		},
+		"layout": {
+			"contentSize": "75%",
+			"wideSize": "100%"
+		},
+		"styles": {
+			"spacing": {
+				"blockGap": "1.5rem"
+			}
+		}
+	}
+}

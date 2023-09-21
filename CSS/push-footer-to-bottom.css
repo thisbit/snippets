@@ -1,0 +1,10 @@
+/* fit footer to bottom always */
+
+/* base functionality */	
+body { display: flex; flex-direction: column; align-items: stretch; height: 100vh; }
+.site { flex-grow: 1;}
+
+/* fixes */
+body.admin-bar { height: calc(100vh - 35px); } /* for logged in users to not have vertical scrolls */
+html { height: fit-content; } /* not supported in some browsers but cannot hurt to fit the root too */
+.container.grid-container { width: 100%; } /* fix to allow for container width set in customizer to keep working */

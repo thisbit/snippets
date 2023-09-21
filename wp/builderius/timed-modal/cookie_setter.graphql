@@ -1,0 +1,4 @@
+query {
+    #gimme cookies
+    cookie: superglobal_variable(variable: "COOKIE", key: "overlayHider")
+}
