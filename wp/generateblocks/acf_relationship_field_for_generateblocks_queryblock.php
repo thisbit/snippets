@@ -1,8 +1,7 @@
 <?php
 
 /**
- * This passes acf relationship field to the related posts loop as it displays on the single project page
- * Related function is shuk_related_posts which sets display conditions based on the value of this acf field 
+ * This passes acf relationship field to the related posts loop as it displays on the single project page 
  **/
 function news_projects_relationship( $query_args, $attributes ) {
     if ( ! empty( $attributes['className'] ) && strpos( $attributes['className'], 'related-news' ) !== false ) {
