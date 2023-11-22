@@ -1,0 +1,49 @@
+# define template for post item
+fragment postFields on Post {
+    ID @private
+    post_title
+    post_date
+    date : php_function_output(function: "get_the_date", arguments: ["F j, Y", "{{ID}}"])
+    post_author {
+        display_name
+    }
+    permalink
+    post_type
+    has_featured_image
+    img: featured_image {
+        m: file_url(size: MEDIUM)
+        thumb: file_url(size: THUMBNAIL)
+    } 
+    time: acf_value(name: "time")
+    location: acf_value(name: "location")
+    price: acf_value(name: "price")
+    terms (query: {taxonomy: "event_type", object_ids: "{{{ID}}}"}) {
+        nodes {
+            name
+        }
+    }
+}
+# root query
+{
+    now: php_function_output(function: "date", arguments: "Y-m-d H:i:s") # current moment
+    #post query
+    allposts: posts (
+        query: {
+            post_type : ["event", "post"]
+            posts_per_page : "-1"
+            }
+        )  @private
+    {
+        nodes {
+            ...postFields
+        }
+    }
+    #transformations
+    events: expression_result( expression: "{{filter(allposts.nodes, (post) -> {strtotime(post.time) > strtotime(now)})}}") @private # getting upcoming events
+    posts:  expression_result( expression: "{{filter(allposts.nodes, (post) -> {post.post_type == 'post'})}}") @private # getting posts
+    upcoming_events : expression_result(expression: "{{{ usort(events, (a, b) -> {strtotime(a.time) - strtotime(b.time)}) }}}") @private # sorting events
+    recent_posts : expression_result(expression: "{{{ usort(posts, (a, b) -> {strtotime(b.post_date) - strtotime(a.post_date)}) }}}") @private #sorting posts
+    selected_events : expression_result(expression: "{{ filter(upcoming_events, (event, index) -> {index < 3}) }}") # limiting events
+    selected_posts : expression_result(expression: "{{ filter(recent_posts, (post, index) -> {index < 3}) }}") # limiting posts
+    anyPosts : expression_result(expression: "{{ filter(recent_posts, (post, index) -> {index < 3}) }}") # passing data to component
+}

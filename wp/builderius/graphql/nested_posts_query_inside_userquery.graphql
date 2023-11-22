@@ -1,0 +1,26 @@
+{
+    users {
+        item: nodes {
+            ID @private
+            display_name
+            roles
+            posts (
+                query: {
+                    post_type: ["post", "event"]
+                    author: "{{{ID}}}"
+            })
+            {
+            item: nodes {
+                    ID
+                    post_title
+                    post_type
+                    post_author @private {
+                        display_name
+                    }
+                    author: expression_result(expression: "{{{post_author.display_name}}}")
+                    terms (query: {object_ids: "{{ID}}" taxonomy: "event_type"}) {item: nodes {name}}
+                }
+            }
+        }
+    }
+}
