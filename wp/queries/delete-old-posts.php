@@ -3,6 +3,7 @@
 /**
 * Delte posts older then a year
 * This has not been tested, I am putting it here for myself to play with in the future
+* plugin alternatives for this would be: https://wordpress.org/plugins/bulk-delete/ OR https://wordpress.org/plugins/wp-bulk-delete/
 */
 
 function delete_old_posts() {
