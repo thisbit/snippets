@@ -1,15 +1,6 @@
 /** 
  * This code is useful for debugging horizontal scroll appearing on page.
- * include this in page, and open concole to see which elements are causing the scroll 
+ * open web dev console and paste this line inside, it will outline the elements with thick red line and list them in console as well
  */
 
-let docWidth = document.documentElement.offsetWidth;
-
-[].forEach.call(
-  document.querySelectorAll('*'),
-  function(el) {
-    if (el.offsetWidth > docWidth) {
-      console.log(el);
-    }
-  }
-);
+[...document.querySelectorAll('*')].forEach(el => { if (el.scrollWidth > el.clientWidth) { el.style.outline = '2px solid red'; console.log(el); } });
