@@ -22,11 +22,6 @@ The ACF Search Extension improves WordPress search by including ACF field conten
 1. Copy the `apuri-acf-search.php` file to your mu-plugins directory or download this entire folder into your plugins directory
 2. Activate it as any other plugin
 
-```php
-// If adding to functions.php
-require_once get_template_directory() . '/apuri-acf-search.php';
-```
-
 ## Usage
 
 Once installed, the extension works automatically with no configuration required. When users search your site, the search results will include posts that have matching content in ACF fields.
