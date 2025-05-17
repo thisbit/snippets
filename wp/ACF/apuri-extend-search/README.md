@@ -153,18 +153,8 @@ If you experience performance issues on sites with many posts and meta entries:
 
 ## License
 
-This extension is released under the MIT License.
-
-## Credits
-
-Developed by [Your Name/Organization]
-
----
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+This plugin is free to use in any way you please.
 
 ## Support
 
-For support, please open an issue on the GitHub repository or contact [your contact information].
+No suppoer offered, feel free to use it or break it tho.
