@@ -19,8 +19,8 @@ The ACF Search Extension improves WordPress search by including ACF field conten
 
 ## Installation
 
-1. Copy the `apuri-acf-search.php` file to your theme's directory or create a custom plugin
-2. Include the file in your theme's `functions.php` or activate your custom plugin
+1. Copy the `apuri-acf-search.php` file to your mu-plugins directory or download this entire folder into your plugins directory
+2. Activate it as any other plugin
 
 ```php
 // If adding to functions.php
