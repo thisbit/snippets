@@ -1,7 +1,0 @@
-{
-  # getting the current url
-  https: superglobal_variable(variable: "SERVER", key: "HTTPS") @private
-  host: superglobal_variable(variable: "SERVER", key: "HTTP_HOST") @private
-  uri: superglobal_variable(variable: "SERVER", key: "REQUEST_URI") @private
-  current_url: expression_result( expression: "{{{(https == 'on' ? 'https://' : 'http://') ~ host ~ uri }}}")
-}

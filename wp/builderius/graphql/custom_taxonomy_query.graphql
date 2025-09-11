@@ -1,7 +1,0 @@
-{
-    tax: terms(query: {taxonomy: "tax_name"}) {
-        terms: nodes {
-            name
-        }
-    }
-}

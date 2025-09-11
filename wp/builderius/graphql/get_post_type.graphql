@@ -1,6 +1,0 @@
-{
-    post_type: php_function_output(function: "get_post_type", arguments: ["{{{id}}}"]) @private
-    obj: php_function_output(function: "get_post_type_object", arguments: ["{{post_type}}"]) @private
-    label: expression_result(expression: "{{obj.labels.singular_name}}")
-    plural_label: expression_result(expression: "{{obj.labels.name}}")   
-}   

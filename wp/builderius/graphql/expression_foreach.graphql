@@ -1,4 +1,0 @@
-{
-    # expression that flatterns the data structure with the loop items
-    foreach: expression_result(expression: "{{{foreach(nodes, (i) -> {i.post})}}}")
-}
