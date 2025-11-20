@@ -58,7 +58,7 @@ remove_action('xmlrpc_rsd_apis', 'rest_output_rsd');
 
 
 
-// Check what routes GridBuilder has REMOVE AFTER TESTING
+// Check what routes GridBuilder has REMOVE AFTER TESTING, test by visiting any rest endpoint
 
 // Check for Grid Builder plugin and routes on every load
 add_action('wp_loaded', function() {
